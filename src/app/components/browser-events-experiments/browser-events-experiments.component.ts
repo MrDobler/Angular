@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowserEventsExperimentsComponent implements OnInit {
 
-  constructor() { }
+  hoverSection = new HTMLElement;
+
+  constructor() {  }
 
   ngOnInit() {
+    this.hoverSection = document.getElementById('hover');
+
+    this.hoverSection.addEventListener('mousemove', onMouseMove);
+
   }
 
+  function onMouseMove(ev: MouseEvent) {
+    console.log(ev);
+  }
 }
